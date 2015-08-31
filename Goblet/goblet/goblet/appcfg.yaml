@@ -1,0 +1,35 @@
+App:
+    AppId: 1600
+    DomainId: 1357913579135791
+    UploadDirectory: goblet/uploads/
+    #AssetDepot: s3://
+    AssetDepot: depot
+    AsyncFamily: Threading
+    BackgroundModules: [goblet.bgprocs]
+Web:
+    ScanPackage: goblet
+    TemplateDir: goblet/templates
+    StaticDirs:
+        assets: goblet/assets
+        player: goblet/player
+        css: goblet/css
+        scripts: goblet/scripts
+        foundation: goblet/foundation
+    SiteName: localhost
+    Port: 8088
+Resources:
+    Database:
+        User: postgres
+        Password: 
+        Host: localhost
+        Port: 5432
+        Schema: goblet
+        CreateTables: True
+    ORM:
+        PoolSize: 20
+        MaxOverflow: 10
+        ConvertUnicode: True
+        Echo: True
+    Contexts: goblet.contexts
+    Models: goblet.models
+    Schema: goblet/domain.plr
